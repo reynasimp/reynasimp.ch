@@ -1,0 +1,6 @@
+# https://docs.netlify.com/configure-builds/file-based-configuration/#configuration-details
+
+[build]
+# base = "" # defaults to root
+# command = "npm run build"
+publish = "public"
