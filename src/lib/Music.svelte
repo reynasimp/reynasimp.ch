@@ -1,13 +1,9 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
+	import { onDestroy } from 'svelte';
 
 	const audio = new Audio('/valorant-ost-loading-main-theme.mp3');
 	audio.volume = 0.1;
 	audio.loop = true;
-
-	onMount(() => {
-		audio.play();
-	});
 
 	onDestroy(() => {
 		audio.pause();
@@ -17,6 +13,8 @@
 		audio.muted = !audio.muted;
 	}
 </script>
+
+<svelte:window on:mousemove={() => audio.play()} on:click={() => audio.play()} />
 
 <button class="mute-button" on:click={toggleMute}>
 	{#if audio.muted}
