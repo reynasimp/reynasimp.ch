@@ -14,7 +14,8 @@
 		right: 0;
 		padding: 0.5rem;
 		opacity: 0.1;
-		transition: all 0.2s;
+		transition: all 0.5s;
+		z-index: 100;
 
 		&:hover {
 			opacity: 1;
