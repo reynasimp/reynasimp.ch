@@ -2,5 +2,5 @@
 
 [build]
 # base = "" # defaults to root
-# command = "npm run build"
-publish = "public"
+command = "npm run build"
+publish = "dist"

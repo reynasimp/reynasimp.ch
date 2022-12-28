@@ -1,9 +1,8 @@
-async function wait(ms = 250) {
-	return new Promise((resolve) => setTimeout(resolve, ms));
-}
+<script lang="ts">
+	import { onMount } from "svelte";
+	import { writable } from "svelte/store";
+	import wait from "./wait";
 
-(async () => {
-	const title = document.head.querySelector("title");
 	const values = [
 		"Reyna 😍",
 		"Reyna 😍",
@@ -38,11 +37,18 @@ async function wait(ms = 250) {
 		"Rey 😍 Mo",
 		"Reyn 😍 M",
 	];
+	const title = writable(values[0]);
 
-	while (true) {
-		for (let value of values) {
-			title.innerHTML = value;
-			await wait();
+	onMount(async () => {
+		while (true) {
+			for (let value of values) {
+				title.set(value);
+				await wait();
+			}
 		}
-	}
-})();
+	});
+</script>
+
+<svelte:head>
+	<title>{$title}</title>
+</svelte:head>

@@ -1,0 +1,22 @@
+:root {
+	font-family: 'Roboto Flex', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+* {
+	user-select: none;
+}
+
+html,
+body {
+	height: 100vh;
+	overflow: hidden;
+	background-color: hsl(0, 0%, 16%);
+}
